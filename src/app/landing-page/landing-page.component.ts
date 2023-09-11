@@ -20,7 +20,7 @@ export class LandingPageComponent implements AfterViewInit {
     { src: '../../assets/test.mp4', description: 'Video 10' },
     { src: '../../assets/test.mp4', description: 'Video 11' },
     { src: '../../assets/test.mp4', description: 'Video 12' },
-    // ... add more videos with descriptions
+   
   ];
 
   showOverlay = false;

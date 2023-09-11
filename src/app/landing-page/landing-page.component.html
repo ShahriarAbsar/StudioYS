@@ -1,41 +1,62 @@
-
-
 <div class="draggable-container">
-      <div class="carousel-container">
-        <div class="carousel-video" *ngFor="let video of videos">
-          <video #videoElement 
-                 (mouseover)="hoverPlay(videoElement)" 
-                 (mouseout)="hoverPause(videoElement)" 
-                 (click)="openOverlay(video)">
-            <source [src]="video.src" type="video/mp4">
-          </video>
-        </div>
+  <div class="carousel-container">
+    <div class="carousel-video" *ngFor="let video of videos">
+      <video #videoElement 
+             (mouseover)="hoverPlay(videoElement)" 
+             (mouseout)="hoverPause(videoElement)" 
+             (click)="openOverlay(video)">
+        <source [src]="video.src" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showOverlay" class="video-overlay">
+  <div class="overlay-content">
+   
+    <div class="video-wrapper">
+      <video controls [src]="currentVideo?.src" type="video/mp4"></video>
+    </div>
+    <div class="video-text">
+      <p>{{currentVideo?.description}}</p>
+      <!-- Additional space for more text -->
+      <div class="additional-text">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
       </div>
     </div>
     
-    <div *ngIf="showOverlay" class="video-overlay">
-      <div class="overlay-content">
-        <video controls [src]="currentVideo?.src" type="video/mp4"></video>
-        <p>{{currentVideo?.description}}</p>
-      </div>
-      <span class="close-button" (click)="closeOverlay()">X</span>
-    </div>
-        
-        <div>
-            <div class="button">
-                  <a href="#" class="btn-flip" data-back="About" data-front="About"></a>
-                  <a href="#" class="btn-flip" data-back="Team" data-front="Team"></a>
-                  <a href="#" class="btn-flip" data-back="Works" data-front="Works"></a>
-                  <a href="#" class="btn-flip" data-back="News" data-front="News"></a>
-                  <a href="#" class="btn-flip" data-back="Contact" data-front="Contact"></a>
-            </div>
-            <div class="text">
-                <h1>Studio Yellow Something.</h1>
-            </div>
-            <div class="para">
-                Studio Yellow Something is a studio initiated by writer and director Raka Noshin Nower. After <br>
-                years of experience in the advertising industry, she has started her own company as she plans on <br>
-                  doing things beyond film production.
-            </div>
-        </div>
+  </div>
+  <span class="close-button" (click)="closeOverlay()">X</span>
+</div>
 
+<div class="horizontal-lines-wrapper">
+  <!-- Existing code for 4 horizontal lines -->
+  <div class="horizontal-lines">
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+    <div class="line"></div>
+  </div>
+  <!-- End of existing code for 4 horizontal lines -->
+</div>
+
+
+<div>
+  <div class="button">
+    <a href="#" class="btn-flip" data-back="About" data-front="About"></a>
+    <a href="#" class="btn-flip" data-back="Team" data-front="Team"></a>
+    <a href="#" class="btn-flip" data-back="Works" data-front="Works"></a>
+    <a href="#" class="btn-flip" data-back="News" data-front="News"></a>
+    <a href="#" class="btn-flip" data-back="Contact" data-front="Contact"></a>
+  </div>
+  <div class="text">
+    <h1>Studio Yellow Something.</h1>
+  </div>
+  <div class="para">
+    Studio Yellow Something is a studio initiated by writer and director Raka Noshin Nower. After <br>
+    years of experience in the advertising industry, she has started her own company as she plans on <br>
+    doing things beyond film production.
+  </div>
+</div>

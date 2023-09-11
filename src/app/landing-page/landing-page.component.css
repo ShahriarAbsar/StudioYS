@@ -122,16 +122,16 @@
       top: 0;
       right: 0;
       bottom: 0;
-      width: 70%;
+      width: 60%;
       background-color: rgba(0, 0, 0, 0.8);
       z-index: 1000;
       overflow-y: auto;
-      animation: slideInRight 0.5s;
+      animation: slideInRight 1.5s;
     }
 
     .video-overlay .video{
       height: 50px;
-      width: 50px;
+      width: 30px;
     }
     
     .overlay-content {
@@ -156,4 +156,45 @@
       }
     }
     
-   
+    .carousel-container::-webkit-scrollbar {
+      width: 5px;
+      height: 5px; 
+    }
+    
+    .carousel-container::-webkit-scrollbar-thumb {
+      background: #ee07ac; 
+      border-radius: 10px; 
+    }
+    
+    .carousel-container::-webkit-scrollbar-thumb:hover {
+      background: #be14e9; 
+    }
+    
+    
+    .video-wrapper {
+      max-width: 40%; /* Adjust the width as needed */
+      margin: auto;
+    }
+    
+    
+    .video-text {
+      padding: 20px;
+      text-align: center; /* Center the text */
+    }
+    
+    .additional-text {
+      font-size: 18px; /* Adjust the font size */
+      color: #fff; /* Adjust the color */
+    }
+    
+    .horizontal-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 10px; /* Gap between lines */
+    }
+    
+    .line {
+      height: 1px; /* Thickness of the line */
+      background-color: rgb(255, 255, 255); /* Color of the line */
+      width: 100%; /* Full-width line */
+    }
