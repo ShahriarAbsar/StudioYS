@@ -1,0 +1,159 @@
+
+
+
+    .button {
+      color: yellow;
+      position: absolute;
+      top: 77%;
+      right: 16%;
+      display: flex;
+      flex-direction: row;
+      margin-left: 5px;
+      gap: 150px;
+    }
+    
+    .text {
+      color: yellow;
+      position: absolute;
+      top: 80%;
+      left: 14%;
+      font-size: 50pt;
+    }
+    
+    .para {
+      color: white;
+      position: absolute;
+      top: 110%;
+      left: 32%;
+      align-items: center;
+      text-align: justify;
+      justify-content: left;
+      font-size: 15pt;
+    }
+    
+    .btn {
+      background-color: #3498db00; 
+      color: rgb(234, 234, 14); 
+      border: none; 
+      padding: 10px 20px; 
+      border-radius: 5px; 
+      font-size: larger;
+      perspective: 1000px; /* Set the perspective for 3D transforms */
+  transition: transform 0.5s; /* Apply a smooth transition for the transform property */
+    }
+
+    
+    .btn-flip {
+      opacity: 1;
+      outline: 0;
+      color: #fff;
+      line-height: 40px;
+      position: relative;
+      text-align: center;
+      letter-spacing: 1px;
+      display: inline-block;
+      text-decoration: none;
+      font-family: 'Open Sans';
+      text-transform: uppercase;
+}
+.btn-flip:hover:after {
+      opacity: 1;
+      transform: translateY(0) rotateX(0);
+}
+.btn-flip:hover:before {
+      opacity: 0;
+      transform: translateY(50%) rotateX(90deg);
+}
+.btn-flip:after {
+      top: 0;
+      left: 0;
+      opacity: 0;
+      width: 100%;
+      color: #c1cb04;
+      display: block;
+      transition: 1.0s;
+      position: absolute;
+      background: #adadaf00;
+      content: attr(data-back);
+      transform: translateY(-50%) rotateX(90deg);
+}
+.btn-flip:before {
+      top: 0;
+      left: 0;
+      opacity: 1;
+      color: #edea09;
+      display: block;
+      padding: 0 30px;
+      line-height: 40px;
+      transition: 1.0s;
+      position: relative;
+      background: #32323700;
+      content: attr(data-front);
+      transform: translateY(0) rotateX(0);
+}
+
+.carousel-container {
+      display: flex;
+      overflow: auto;
+    }
+    
+    .carousel-video {
+      flex: 0 0 auto;
+      width: 300px;
+      margin-right: 16px;
+    }
+    
+    video {
+      width: 100%;
+      height: auto;
+    }
+    
+    .draggable-container {
+      overflow: hidden;
+      cursor: grab;
+    }
+    
+    .carousel-container.active {
+      cursor: grabbing;
+    }
+
+    .video-overlay {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 70%;
+      background-color: rgba(0, 0, 0, 0.8);
+      z-index: 1000;
+      overflow-y: auto;
+      animation: slideInRight 0.5s;
+    }
+
+    .video-overlay .video{
+      height: 50px;
+      width: 50px;
+    }
+    
+    .overlay-content {
+      padding: 20px;
+    }
+    
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      cursor: pointer;
+      font-size: 24px;
+      color: white;
+    }
+    
+    @keyframes slideInRight {
+      from {
+        right: -50%;
+      }
+      to {
+        right: 0;
+      }
+    }
+    
+   
