@@ -1,0 +1,15 @@
+<div class="header">
+    Logo
+</div>
+
+<div class="form">
+    <form>
+        <h2>Project Input Form</h2>
+        <input type="text" placeholder="Project Name" [(ngModel)]="title" [ngModelOptions]="{standalone: true}"><br>
+        <input type="text" placeholder="description" [(ngModel)]="description" [ngModelOptions]="{standalone: true}"><br>
+        <input type="text" placeholder="category" [(ngModel)]="category" [ngModelOptions]="{standalone: true}"><br>
+        <input type="file" placeholder="project image" (change)="onFileChange($event)">
+        <br><br>
+        <button type="submit" (click)="onSubmit()">Lagao</button>
+    </form>
+</div>
