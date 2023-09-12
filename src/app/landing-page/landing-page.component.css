@@ -15,9 +15,13 @@
     .text {
       color: yellow;
       position: absolute;
-      top: 80%;
-      left: 14%;
+      top: 70%;
+      left: 22%;
       font-size: 50pt;
+    }
+
+    h5{
+      font-size: 80pt;
     }
     
     .para {
@@ -99,13 +103,14 @@
     
     .carousel-video {
       flex: 0 0 auto;
-      width: 300px;
+      width: 800px;
+      height: 450px;
       margin-right: 16px;
     }
     
     video {
-      width: 100%;
-      height: auto;
+      width: 103%;
+      height: 105%;
     }
     
     .draggable-container {
@@ -122,17 +127,14 @@
       top: 0;
       right: 0;
       bottom: 0;
-      width: 70%;
+      width: 50%;
       background-color: rgba(0, 0, 0, 0.8);
       z-index: 1000;
       overflow-y: auto;
-      animation: slideInRight 0.5s;
+      animation: slideInRight 1.5s;
     }
 
-    .video-overlay .video{
-      height: 50px;
-      width: 50px;
-    }
+   
     
     .overlay-content {
       padding: 20px;
@@ -156,4 +158,58 @@
       }
     }
     
+    .carousel-container::-webkit-scrollbar {
+      width: 5px;
+      height: 5px; 
+    }
+    
+    .carousel-container::-webkit-scrollbar-thumb {
+      background: #ee07ac; 
+      border-radius: 10px; 
+    }
+    
+    .carousel-container::-webkit-scrollbar-thumb:hover {
+      background: #be14e9; 
+    }
+    
+    
+    .video-wrapper {
+      max-width: 100%; /* Adjust the width as needed */
+      margin: auto;
+    }
+    
+    
+    .video-text {
+      padding: 20px;
+      text-align: center; /* Center the text */
+    }
+    
+    .additional-text {
+      font-size: 18px; /* Adjust the font size */
+      color: #fff; /* Adjust the color */
+    }
+    
+    .horizontal-lines {
+      display: flex;
+      flex-direction: column;
+      gap: 10px; /* Gap between lines */
+    }
+    
+    .line {
+      height: 1px; /* Thickness of the line */
+      background-color: rgb(255, 255, 255); /* Color of the line */
+      width: 100%; /* Full-width line */
+    }
+
+    h1{
+      font-size: 50pt;
+      color: yellow;
+    }
+
+    h3{
+      font-size: 20pt;
+      color:white;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
    

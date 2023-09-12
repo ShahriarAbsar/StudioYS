@@ -8,19 +8,19 @@ import { Component, AfterViewInit, ElementRef } from '@angular/core';
 export class LandingPageComponent implements AfterViewInit {
 
   videos = [
-    { src: '../../assets/test.mp4', description: 'Video 1' },
-    { src: '../../assets/test.mp4', description: 'Video 2' },
-    { src: '../../assets/test.mp4', description: 'Video 3' },
-    { src: '../../assets/test.mp4', description: 'Video 4' },
-    { src: '../../assets/test.mp4', description: 'Video 5' },
-    { src: '../../assets/test.mp4', description: 'Video 6' },
-    { src: '../../assets/test.mp4', description: 'Video 7' },
-    { src: '../../assets/test.mp4', description: 'Video 8' },
-    { src: '../../assets/test.mp4', description: 'Video 9' },
+    { src: '../../assets/y2mate.is - I am never gonna financially recover from this-gV7lz6wCcfM-720p-1694512960.mp4', description: 'Video 1' },
+    { src: '../../assets/y2mate.is - I am never gonna financially recover from this-gV7lz6wCcfM-720p-1694512960.mp4', description: 'Video 2' },
+    { src: '../../assets/y2mate.is - I am never gonna financially recover from this-gV7lz6wCcfM-720p-1694512960.mp4', description: 'Video 3' },
+    { src: '../../assets/y2mate.is - I am never gonna financially recover from this-gV7lz6wCcfM-720p-1694512960.mp4', description: 'Video 4' },
+    { src: '../../assets/y2mate.is - I am never gonna financially recover from this-gV7lz6wCcfM-720p-1694512960.mp4', description: 'Video 5' },
+    { src: '../../assets/y2mate.is - I am never gonna financially recover from this-gV7lz6wCcfM-720p-1694512960.mp4', description: 'Video 6' },
+    { src: '../../assets/y2mate.is - I am never gonna financially recover from this-gV7lz6wCcfM-720p-1694512960.mp4', description: 'Video 7' },
+    { src: '../../assets/y2mate.is - I am never gonna financially recover from this-gV7lz6wCcfM-720p-1694512960.mp4', description: 'Video 8' },
+    { src: '../../assets/y2mate.is - I am never gonna financially recover from this-gV7lz6wCcfM-720p-1694512960.mp4', description: 'Video 9' },
     { src: '../../assets/test.mp4', description: 'Video 10' },
     { src: '../../assets/test.mp4', description: 'Video 11' },
     { src: '../../assets/test.mp4', description: 'Video 12' },
-    // ... add more videos with descriptions
+   
   ];
 
   showOverlay = false;
