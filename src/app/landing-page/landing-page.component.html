@@ -5,7 +5,7 @@
              (mouseover)="hoverPlay(videoElement)" 
              (mouseout)="hoverPause(videoElement)" 
              (click)="openOverlay(video)">
-        <source [src]="video.src" type="video/mp4">
+        <source [src]="video?.videoLink" type="video/mp4">
       </video>
     </div>
   </div>
@@ -15,16 +15,15 @@
   <div class="overlay-content">
    
     <div class="video-wrapper">
-      <video controls [src]="currentVideo?.src" type="video/mp4"></video>
+      <video controls [src]="currentVideo?.videoLink" type="video/mp4"></video>
     </div>
     <div class="video-text">
-      <p>{{currentVideo?.description}}</p>
+      <p>{{currentVideo?.category}}</p>
       <!-- Additional space for more text -->
       <div class="additional-text">
-        <h1>JAWAN TVC</h1>
+        <h1>{{ currentVideo?.title }}</h1>
         <h4>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        eiusmod tempor incididunt ut labore et dolore magna aliqua.
+          {{ currentVideo?.description }}
         </h4>
 
       </div>

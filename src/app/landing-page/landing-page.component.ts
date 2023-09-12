@@ -1,32 +1,27 @@
-import { Component, AfterViewInit, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { backUrl } from 'src/datas';
 
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.css']
 })
-export class LandingPageComponent implements AfterViewInit {
+export class LandingPageComponent implements AfterViewInit, OnInit {
 
-  videos = [
-    { src: '../../assets/y2mate.is - I am never gonna financially recover from this-gV7lz6wCcfM-720p-1694512960.mp4', description: 'Video 1' },
-    { src: '../../assets/y2mate.is - I am never gonna financially recover from this-gV7lz6wCcfM-720p-1694512960.mp4', description: 'Video 2' },
-    { src: '../../assets/y2mate.is - I am never gonna financially recover from this-gV7lz6wCcfM-720p-1694512960.mp4', description: 'Video 3' },
-    { src: '../../assets/y2mate.is - I am never gonna financially recover from this-gV7lz6wCcfM-720p-1694512960.mp4', description: 'Video 4' },
-    { src: '../../assets/y2mate.is - I am never gonna financially recover from this-gV7lz6wCcfM-720p-1694512960.mp4', description: 'Video 5' },
-    { src: '../../assets/y2mate.is - I am never gonna financially recover from this-gV7lz6wCcfM-720p-1694512960.mp4', description: 'Video 6' },
-    { src: '../../assets/y2mate.is - I am never gonna financially recover from this-gV7lz6wCcfM-720p-1694512960.mp4', description: 'Video 7' },
-    { src: '../../assets/y2mate.is - I am never gonna financially recover from this-gV7lz6wCcfM-720p-1694512960.mp4', description: 'Video 8' },
-    { src: '../../assets/y2mate.is - I am never gonna financially recover from this-gV7lz6wCcfM-720p-1694512960.mp4', description: 'Video 9' },
-    { src: '../../assets/test.mp4', description: 'Video 10' },
-    { src: '../../assets/test.mp4', description: 'Video 11' },
-    { src: '../../assets/test.mp4', description: 'Video 12' },
-   
-  ];
+  videos: Array<{title: string, description: string, category: string, videoLink: string, _id: string, __v: number}> = [];
 
   showOverlay = false;
   currentVideo: any = null;
 
-  constructor(private elRef: ElementRef) {}
+  constructor(private elRef: ElementRef, private http: HttpClient) {}
+
+  ngOnInit(): void {
+      this.http.get(`${backUrl}projects`).subscribe((paisi: any) => {
+        console.log(paisi);
+        this.videos = paisi
+      })
+  }
 
   ngAfterViewInit() {
     this.makeDraggable();
