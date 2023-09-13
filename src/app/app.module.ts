@@ -7,12 +7,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { AdminformComponent } from './adminform/adminform.component';
+import { TeamComponent } from './team/team.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingPageComponent,
-    AdminformComponent
+    AdminformComponent,
+    TeamComponent
   ],
   imports: [
     BrowserModule,
