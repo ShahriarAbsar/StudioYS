@@ -11,7 +11,7 @@ import {
     } from '@angular/animations';
     
     export const slideInAnimation = trigger('routeAnimations', [
-      transition('home => *', [
+      transition(' home => *', [
         query(':enter, :leave', style({ position: 'fixed', width: '100%' }), {
           optional: true
         }),

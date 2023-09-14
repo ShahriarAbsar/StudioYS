@@ -1,4 +1,11 @@
-
+.page{
+  background:black;
+  min-height: 150vh;
+  min-width: 90vw;
+  background-size:contain;
+  
+ 
+}
 
 
     .button {
