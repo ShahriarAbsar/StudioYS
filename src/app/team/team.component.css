@@ -3,7 +3,14 @@ html{
   scroll-padding: 10rem;
 }
 
-
+.logo{
+  position: fixed;
+  z-index: 1;
+  top: 15%;
+  left: 5%;
+  cursor: pointer;
+  
+}
 
 .button {
       color: yellow;
@@ -85,8 +92,8 @@ html{
       font-size: 100pt; 
       text-align: center;
       position: absolute;
-      top: 20%;
-      left: 30%;
+      top: 5%;
+      left: 28%;
       font-weight: bold; /* Use "font-weight" instead of "text-transform" for bold text */
     }
     
@@ -94,26 +101,33 @@ html{
       color: black;
       text-transform: capitalize;
       position: absolute;
-      top: 50%;
+      top: 38%;
       left: 38%;
     }
     
     section.two {
-      position: sticky; /* Use "position: sticky" for the sticky effect */
-      top: 0; /* Stick to the top of the viewport */
-      height: auto;
-      background: #fafafa;
+      position: relative; /* Use "position: sticky" for the sticky effect */
+      bottom: 0px; /* Stick to the top of the viewport */
+      height: 80vh;
+      background: #ffffff;
       z-index: 1; /* Ensure it's above section.one */
     }
     
     .container {
       position: relative; /* Change to relative positioning */
       margin-top: 100vh; /* Add space for section.one's height */
-      left: 35%;
-      width: 525px;
-      height: 565px;
+      left: 38%;
+      top: 80px;
+      width: 425px;
+      height: 465px;
       background-color: transparent;
       border: 1px solid black;
+      bottom: 0px;
+    }
+
+    .container img{
+      width: 425px;
+      height: 465px;
     }
     
     /* Styling for the hidden paragraph */
@@ -140,21 +154,49 @@ html{
     }
     
     .right-arrow {
-      top: 85%;
+      color: black solid;
+      top: 87%;
       right: 10px;
       transform: translateY(-50%);
+
+
+      cursor: pointer;
+  font-size: 40px;
+  color: #000101;
+  position: absolute;
+  transition: transform 0.3s;
+    }
+    .right-arrow:not(.active) {
+      transform: rotate(0deg);
+    }
+    .right-arrow.active {
+      transform: rotate(45deg);
+    }
+
+    .add {
+      display: block;
+      font-weight: bold;
+      height: 40px;
+      transition: all .4s ease-in-out;
+    }
+    .plus {
+      background: #bada55;
+      transition: all .4s ease-in-out;
     }
     
     .bottom-arrow {
-      bottom: 20px;
-      left: 95%;
+      color: #030301;
+      top: 100%;
+      left: 98%;
       transform: translateX(-50%);
     }
 
     .top-arrow{
       bottom: 570px;
+      top: 0%;
       left: 95%;
-      transform: translateX(-50%);
+      color: black;
+      transform: rotate(180deg);
     }
     
     /* Styling for the content container */
@@ -165,12 +207,15 @@ html{
     .paragraph.show {
       display: block;
       position: absolute;
-      top: -115px;
+      top: -120px;
       left: 100%;
-      width: 50%; /* Adjust the width as needed */
-      background-color: #e60909;
+      width: 50%; 
+      background-color: #e6090900;
+      color: black;
       padding: 10px;
-      z-index: 2; /* Ensure it's above the image */
+      z-index: 2; 
+      transform: translateX(0); 
+      transition: transform 1s ease-out;
     }
     
     h4{

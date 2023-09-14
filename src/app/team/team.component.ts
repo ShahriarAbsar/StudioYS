@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HostListener } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-team',
@@ -7,6 +8,9 @@ import { HostListener } from '@angular/core';
   styleUrls: ['./team.component.css']
 })
 export class TeamComponent {
+
+  constructor(private router: Router) {}
+
   isSticky: boolean = false;
   showParagraph: boolean = false;
   showAdditionalContainer: boolean = false;
@@ -25,8 +29,11 @@ export class TeamComponent {
     }
   }
 
+  isIconActive = false;
+
   toggleParagraph() {
     this.showParagraph = !this.showParagraph;
+    this.isIconActive = !this.isIconActive;
   }
 
   toggleAdditionalContainer() {
@@ -35,5 +42,8 @@ export class TeamComponent {
 
   detoggleAdditionalContainer(){
     this.hideAdditionalContainer = this.showAdditionalContainer; //vai eta kaj kore na kn :/
+  }
+  home(){
+    this.router.navigateByUrl('');
   }
 }
