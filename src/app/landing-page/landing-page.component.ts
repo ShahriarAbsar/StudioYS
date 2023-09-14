@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ElementRef, OnInit } from '@angular/core';
+import { Component, AfterViewInit, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { backUrl } from 'src/datas';
 
@@ -14,13 +14,14 @@ export class LandingPageComponent implements AfterViewInit, OnInit {
   showOverlay = false;
   currentVideo: any = null;
 
-  constructor(private elRef: ElementRef, private http: HttpClient) {}
+  constructor(private elRef: ElementRef, private http: HttpClient, private renderer: Renderer2) {}
 
   ngOnInit(): void {
-      this.http.get(`${backUrl}projects`).subscribe((paisi: any) => {
-        console.log(paisi);
-        this.videos = paisi
-      })
+    this.renderer.setStyle(this.elRef.nativeElement.ownerDocument.body, 'backgroundColor', 'black');
+    this.http.get(`${backUrl}projects`).subscribe((paisi: any) => {
+      console.log(paisi);
+      this.videos = paisi
+    })
   }
 
   ngAfterViewInit() {
