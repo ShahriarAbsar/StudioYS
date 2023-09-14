@@ -1,11 +1,14 @@
 import { Component, AfterViewInit, ElementRef, OnInit, Renderer2 } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { backUrl } from 'src/datas';
+import { slideInAnimation } from '../app-routing.animations';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
-  styleUrls: ['./landing-page.component.css']
+  styleUrls: ['./landing-page.component.css'],
+  animations: [slideInAnimation]
 })
 export class LandingPageComponent implements AfterViewInit, OnInit {
 
@@ -14,7 +17,7 @@ export class LandingPageComponent implements AfterViewInit, OnInit {
   showOverlay = false;
   currentVideo: any = null;
 
-  constructor(private elRef: ElementRef, private http: HttpClient, private renderer: Renderer2) {}
+  constructor(private elRef: ElementRef, private http: HttpClient, private renderer: Renderer2, private router: Router) {}
 
   ngOnInit(): void {
     this.renderer.setStyle(this.elRef.nativeElement.ownerDocument.body, 'backgroundColor', 'black');
@@ -76,6 +79,10 @@ export class LandingPageComponent implements AfterViewInit, OnInit {
 
   closeOverlay() {
     this.showOverlay = false;
+  }
+
+  goTo() {
+    this.router.navigateByUrl('team');
   }
 
   

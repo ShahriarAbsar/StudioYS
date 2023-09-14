@@ -5,7 +5,7 @@ import { AdminformComponent } from './adminform/adminform.component';
 import { TeamComponent } from './team/team.component';
 
 const routes: Routes = [
-  { path: '', component: LandingPageComponent },
+  { path: '', component: LandingPageComponent, data:{ animation:'home'} },
   { path: 'team', component: TeamComponent },
   { path: 'admin', component: AdminformComponent }
 ];

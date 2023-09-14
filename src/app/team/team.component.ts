@@ -34,6 +34,6 @@ export class TeamComponent {
   }
 
   detoggleAdditionalContainer(){
-    this.hideAdditionalContainer = !this.hideAdditionalContainer; //vai eta kaj kore na kn :/
+    this.hideAdditionalContainer = this.showAdditionalContainer; //vai eta kaj kore na kn :/
   }
 }

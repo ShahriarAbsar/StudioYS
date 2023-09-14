@@ -1,4 +1,7 @@
-/* Updated CSS for 1920x1080 resolution */
+html{
+  scroll-behavior: smooth;
+  scroll-padding: 10rem;
+}
 .button {
       color: yellow;
       position: fixed;
@@ -180,4 +183,14 @@
       left: 24%;
       font-size: 20pt;
       color: #0a0a0a;
+    }
+
+    .two{
+      position: sticky;
+    }
+
+    .scroll-container {
+      scroll-behavior: smooth;
+      scroll-padding: 10rem;
+      overflow: hidden; /* Hide the scrollbars */
     }
