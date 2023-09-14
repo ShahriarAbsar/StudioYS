@@ -20,11 +20,11 @@ export class LandingPageComponent implements AfterViewInit, OnInit {
   constructor(private elRef: ElementRef, private http: HttpClient, private renderer: Renderer2, private router: Router) {}
 
   ngOnInit(): void {
-   /* this.renderer.setStyle(this.elRef.nativeElement.ownerDocument.body, 'backgroundColor', 'black');
+   /* this.renderer.setStyle(this.elRef.nativeElement.ownerDocument.body, 'backgroundColor', 'black'); */
     this.http.get(`${backUrl}projects`).subscribe((paisi: any) => {
       console.log(paisi);
       this.videos = paisi
-    })*/
+    })
   }
   
 
@@ -85,6 +85,8 @@ export class LandingPageComponent implements AfterViewInit, OnInit {
   team() {
     this.router.navigateByUrl('team');
   }
-
+home(){
+  this.router.navigateByUrl('');
+}
   
 }
