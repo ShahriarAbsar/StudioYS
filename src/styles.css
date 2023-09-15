@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 body{
-      background-color: #ffffff;;
+      background-color: var(--bg-color);
       overflow-y: auto;
       color: aliceblue;
       margin: 0;

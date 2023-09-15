@@ -4,6 +4,8 @@ import { backUrl } from 'src/datas';
 import { slideInAnimation } from '../app-routing.animations';
 import { Router } from '@angular/router';
 
+import { GlobalStatesService } from '../services/global-states.service';
+
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
@@ -16,11 +18,20 @@ export class LandingPageComponent implements AfterViewInit, OnInit {
 
   showOverlay = false;
   currentVideo: any = null;
+  
+  // get random() {
+  //   return this.globalStateService.someRandom;
+  // }
 
-  constructor(private elRef: ElementRef, private http: HttpClient, private renderer: Renderer2, private router: Router) {}
+  // changeIt(num: number) {
+  //   this.globalStateService.changeRandom(num);
+  // }
+
+  constructor(private elRef: ElementRef, private http: HttpClient, private renderer: Renderer2, private router: Router, private globalStateService: GlobalStatesService) {}
 
   ngOnInit(): void {
    /* this.renderer.setStyle(this.elRef.nativeElement.ownerDocument.body, 'backgroundColor', 'black'); */
+    this.globalStateService.setBackgroundColor('black')
     this.http.get(`${backUrl}projects`).subscribe((paisi: any) => {
       console.log(paisi);
       this.videos = paisi

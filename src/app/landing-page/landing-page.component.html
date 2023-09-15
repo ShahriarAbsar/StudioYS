@@ -3,74 +3,74 @@
 
 
 
-<div class="draggable-container">
-  <div class="carousel-container">
-    <div class="carousel-video" *ngFor="let video of videos">
-      <video #videoElement 
-             (mouseover)="hoverPlay(videoElement)" 
-             (mouseout)="hoverPause(videoElement)" 
-             (click)="openOverlay(video)">
-        <source [src]="video?.videoLink" type="video/mp4">
-      </video>
-    </div>
-  </div>
-</div>
-
-<div *ngIf="showOverlay" class="video-overlay">
-  <div class="overlay-content">
-   
-    <div class="video-wrapper">
-      <video controls [src]="currentVideo?.videoLink" type="video/mp4"></video>
-    </div>
-    <div class="video-text">
-      <p>{{currentVideo?.category}}</p>
-      <!-- Additional space for more text -->
-      <div class="additional-text">
-        <h1>{{ currentVideo?.title }}</h1>
-        <h4>
-          {{ currentVideo?.description }}
-        </h4>
-
+  <div class="draggable-container">
+    <div class="carousel-container">
+      <div class="carousel-video" *ngFor="let video of videos">
+        <video #videoElement (mouseover)="hoverPlay(videoElement)" (mouseout)="hoverPause(videoElement)"
+          (click)="openOverlay(video)">
+          <source [src]="video?.videoLink" type="video/mp4">
+        </video>
       </div>
     </div>
-    
   </div>
-  <span class="close-button" (click)="closeOverlay()">X</span>
-</div>
 
-<div class="horizontal-lines-wrapper">
-  <!-- Existing code for 4 horizontal lines -->
-  <div class="horizontal-lines">
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
-    <div class="line"></div>
+  <div *ngIf="showOverlay" class="video-overlay">
+    <div class="overlay-content">
+
+      <div class="video-wrapper">
+        <video controls [src]="currentVideo?.videoLink" type="video/mp4"></video>
+      </div>
+      <div class="video-text">
+        <p>{{currentVideo?.category}}</p>
+        <!-- Additional space for more text -->
+        <div class="additional-text">
+          <h1>{{ currentVideo?.title }}</h1>
+          <h4>
+            {{ currentVideo?.description }}
+          </h4>
+
+        </div>
+      </div>
+
+    </div>
+    <span class="close-button" (click)="closeOverlay()">X</span>
   </div>
-  <!-- End of existing code for 4 horizontal lines -->
-</div>
 
-
-<div>
-  
-  <div class="text">
-    <h5>Studio Yellow Something.</h5>
+  <div class="horizontal-lines-wrapper">
+    <!-- Existing code for 4 horizontal lines -->
+    <div class="horizontal-lines">
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+      <div class="line"></div>
+    </div>
+    <!-- End of existing code for 4 horizontal lines -->
   </div>
-  <div class="para">
-    Studio Yellow Something is a studio initiated by writer and director Raka Noshin Nower. After <br>
-    years of experience in the advertising industry, she has started her own company as she plans on <br>
-    doing things beyond film production.
-  </div>
-</div>
-<div class="button">
-  <a  class="btn-flip" data-back="About" data-front="About"></a>
-  <a class="btn-flip" data-back="Team" data-front="Team" (click)="team()"></a>
-  <a href="#" class="btn-flip" data-back="Works" data-front="Works"></a>
-  <a href="#" class="btn-flip" data-back="News" data-front="News"></a>
-  <a href="#" class="btn-flip" data-back="Contact" data-front="Contact"></a>
-  
 
-</div>
-<div class="logo" (click)="home()">
-  <img src="../../assets/logo2.png" alt="">
-</div>
+
+  <div>
+
+    <div class="text">
+      <h5>Studio Yellow Something.</h5>
+    </div>
+    <div class="para">
+      Studio Yellow Something is a studio initiated by writer and director Raka Noshin Nower. After <br>
+      years of experience in the advertising industry, she has started her own company as she plans on <br>
+      doing things beyond film production.
+      <!-- {{ random }}
+      <button (click)="changeIt(2)">Change</button> -->
+    </div>
+  </div>
+  <div class="button">
+    <a class="btn-flip" data-back="About" data-front="About"></a>
+    <a class="btn-flip" data-back="Team" data-front="Team" (click)="team()"></a>
+    <a href="#" class="btn-flip" data-back="Works" data-front="Works"></a>
+    <a href="#" class="btn-flip" data-back="News" data-front="News"></a>
+    <a href="#" class="btn-flip" data-back="Contact" data-front="Contact"></a>
+
+
+  </div>
+  <div class="logo" (click)="home()">
+    <img src="../../assets/logo2.png" alt="">
+  </div>
 </div>

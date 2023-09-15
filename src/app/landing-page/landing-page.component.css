@@ -1,12 +1,9 @@
 .page{
-  background:black;
   min-height: 150vh;
   min-width: 90vw;
   background-size:contain;
   scroll-behavior: smooth;
-overflow-y: hidden;
-  
- 
+  overflow-y: hidden;
 }
 
 .logo{

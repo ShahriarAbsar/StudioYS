@@ -1,39 +1,37 @@
-
-
 <section class="one">
-      <div class="text">
-        <h1>
-          THE TEAM
-        </h1>
-        <h3>
-          Learn more about the creators behind the scenes
-        </h3>
+  <div class="text">
+    <h1>
+      THE TEAM
+    </h1>
+    <h3>
+      Learn more about the creators behind the scenes
+    </h3>
+  </div>
+</section>
+
+<section [class.sticky]="isSticky" class="two">
+  <div class="container">
+    <img [src]="showAdditionalContainer ? '../../assets/khalid.png' : '../../assets/raka.png'" alt="image">
+    <div class="right-arrow" (click)="toggleParagraph()" [class.active]="isIconActive"> + </div>
+    <div class="bottom-arrow" (click)="toggleAdditionalContainer()"> ⮟ </div>
+    <div class="top-arrow" (click)="detoggleAdditionalContainer()">⮟</div>
+    <div class="content">
+      <div class="paragraph" [class.show]="showParagraph">
+        <p>This is a hidden paragraph that appears when you click the right arrow.</p>
       </div>
-    </section>
-    
-    <section [class.sticky]="isSticky" class="two">
-      <div class="container">
-        <img [src]="showAdditionalContainer ? '../../assets/khalid.png' : '../../assets/raka.png'" alt="image">
-        <div class="right-arrow" (click)="toggleParagraph()" [class.active]="isIconActive"> + </div>
-        <div class="bottom-arrow" (click)="toggleAdditionalContainer()" > ⮟ </div>
-        <div class="top-arrow" (click)="detoggleAdditionalContainer()">⮟</div>
-        <div class="content">
-          <div class="paragraph" [class.show]="showParagraph">
-            <p>This is a hidden paragraph that appears when you click the right arrow.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-    
-    
-    <div class="button">
-      <a href="#" class="btn-flip" data-back="About" data-front="About"></a>
-      <a href="#" class="btn-flip" data-back="Team" data-front="Team"></a>
-      <a href="#" class="btn-flip" data-back="Works" data-front="Works"></a>
-      <a href="#" class="btn-flip" data-back="News" data-front="News"></a>
-      <a href="#" class="btn-flip" data-back="Contact" data-front="Contact"></a>
     </div>
-    
-    <div class="logo" (click)="home()">
-      <img src="../../assets/logo2.png" alt="">
-    </div>
+  </div>
+</section>
+
+
+<div class="button">
+  <a href="#" class="btn-flip" data-back="About" data-front="About"></a>
+  <a href="#" class="btn-flip" data-back="Team" data-front="Team"></a>
+  <a href="#" class="btn-flip" data-back="Works" data-front="Works"></a>
+  <a href="#" class="btn-flip" data-back="News" data-front="News"></a>
+  <a href="#" class="btn-flip" data-back="Contact" data-front="Contact"></a>
+</div>
+
+<div class="logo" (click)="home()">
+  <img src="../../assets/logo2.png" alt="">
+</div>

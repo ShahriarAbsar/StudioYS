@@ -1,242 +1,256 @@
-html{
+html {
   scroll-behavior: smooth;
   scroll-padding: 10rem;
 }
 
-.logo{
+.logo {
   position: fixed;
   z-index: 1;
   top: 15%;
   left: 5%;
   cursor: pointer;
-  
+
 }
 
 .button {
-      color: yellow;
-      position: fixed;
-      top: 90%;
-      right: 16%;
-      display: flex;
-      flex-direction: row;
-      margin-left: 5px;
-      gap: 150px;
-    }
-    
-    .btn {
-      background-color: #3498db00;
-      color: rgb(15, 15, 14);
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-size: larger;
-      perspective: 1000px;
-      transition: transform 0.5s;
-    }
-    
-    .btn-flip {
-      opacity: 1;
-      outline: 0;
-      color: #fff;
-      line-height: 40px;
-      position: relative;
-      text-align: center;
-      letter-spacing: 1px;
-      display: inline-block;
-      text-decoration: none;
-      font-family: 'Open Sans';
-      text-transform: uppercase;
-    }
-    
-    .btn-flip:hover:after {
-      opacity: 1;
-      transform: translateY(0) rotateX(0);
-    }
-    
-    .btn-flip:hover:before {
-      opacity: 0;
-      transform: translateY(50%) rotateX(90deg);
-    }
-    
-    .btn-flip:after {
-      top: 0;
-      left: 0;
-      opacity: 0;
-      width: 100%;
-      color: #0f0f09;
-      display: block;
-      transition: 1.0s;
-      position: absolute;
-      background: #adadaf00;
-      content: attr(data-back);
-      transform: translateY(-50%) rotateX(90deg);
-    }
-    
-    .btn-flip:before {
-      top: 0;
-      left: 0;
-      opacity: 1;
-      color: #030301;
-      display: block;
-      padding: 0 30px;
-      line-height: 40px;
-      transition: 1.0s;
-      position: relative;
-      background: #32323700;
-      content: attr(data-front);
-      transform: translateY(0) rotateX(0);
-    }
-    
-    h1 {
-      color: #030301;
-      font-size: 100pt; 
-      text-align: center;
-      position: absolute;
-      top: 5%;
-      left: 28%;
-      font-weight: bold; /* Use "font-weight" instead of "text-transform" for bold text */
-    }
-    
-    h3 {
-      color: black;
-      text-transform: capitalize;
-      position: absolute;
-      top: 38%;
-      left: 38%;
-    }
-    
-    section.two {
-      position: relative; /* Use "position: sticky" for the sticky effect */
-      bottom: 0px; /* Stick to the top of the viewport */
-      height: 80vh;
-      background: #ffffff;
-      z-index: 1; /* Ensure it's above section.one */
-    }
-    
-    .container {
-      position: relative; /* Change to relative positioning */
-      margin-top: 100vh; /* Add space for section.one's height */
-      left: 38%;
-      top: 80px;
-      width: 425px;
-      height: 465px;
-      background-color: transparent;
-      border: 1px solid black;
-      bottom: 0px;
-    }
+  color: yellow;
+  position: fixed;
+  top: 90%;
+  right: 16%;
+  display: flex;
+  flex-direction: row;
+  margin-left: 5px;
+  gap: 150px;
+}
 
-    .container img{
-      width: 425px;
-      height: 465px;
-    }
-    
-    /* Styling for the hidden paragraph */
-.paragraph, .additional-container {
-      display: none;
-      margin-top: 20px;
-      padding: 10px;
-      position: absolute;
-      bottom: -10px;
-      left: -10px;
-      background-color: #f00c0c00;
-    }
-    
-    .show {
-      display: block;
-    }
-    
-    /* Add styling for the arrows */
-    .right-arrow, .bottom-arrow , .top-arrow{
-      cursor: pointer;
-      font-size: 24px;
-      color: #3498db;
-      position: absolute;
-    }
-    
-    .right-arrow {
-      color: black solid;
-      top: 87%;
-      right: 10px;
-      transform: translateY(-50%);
+.btn {
+  background-color: #3498db00;
+  color: rgb(15, 15, 14);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: larger;
+  perspective: 1000px;
+  transition: transform 0.5s;
+}
+
+.btn-flip {
+  opacity: 1;
+  outline: 0;
+  color: #fff;
+  line-height: 40px;
+  position: relative;
+  text-align: center;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-decoration: none;
+  font-family: 'Open Sans';
+  text-transform: uppercase;
+}
+
+.btn-flip:hover:after {
+  opacity: 1;
+  transform: translateY(0) rotateX(0);
+}
+
+.btn-flip:hover:before {
+  opacity: 0;
+  transform: translateY(50%) rotateX(90deg);
+}
+
+.btn-flip:after {
+  top: 0;
+  left: 0;
+  opacity: 0;
+  width: 100%;
+  color: #0f0f09;
+  display: block;
+  transition: 1.0s;
+  position: absolute;
+  background: #adadaf00;
+  content: attr(data-back);
+  transform: translateY(-50%) rotateX(90deg);
+}
+
+.btn-flip:before {
+  top: 0;
+  left: 0;
+  opacity: 1;
+  color: #030301;
+  display: block;
+  padding: 0 30px;
+  line-height: 40px;
+  transition: 1.0s;
+  position: relative;
+  background: #32323700;
+  content: attr(data-front);
+  transform: translateY(0) rotateX(0);
+}
+
+h1 {
+  color: #030301;
+  font-size: 100pt;
+  text-align: center;
+  position: absolute;
+  top: 5%;
+  left: 28%;
+  font-weight: bold;
+  /* Use "font-weight" instead of "text-transform" for bold text */
+}
+
+h3 {
+  color: black;
+  text-transform: capitalize;
+  position: absolute;
+  top: 38%;
+  left: 38%;
+}
+
+section.two {
+  position: relative;
+  /* Use "position: sticky" for the sticky effect */
+  bottom: 0px;
+  /* Stick to the top of the viewport */
+  height: 80vh;
+  background: #ffffff;
+  z-index: 1;
+  /* Ensure it's above section.one */
+}
+
+.container {
+  position: relative;
+  /* Change to relative positioning */
+  margin-top: 100vh;
+  /* Add space for section.one's height */
+  left: 38%;
+  top: 80px;
+  width: 425px;
+  height: 465px;
+  background-color: transparent;
+  border: 1px solid black;
+  bottom: 0px;
+}
+
+.container img {
+  width: 425px;
+  height: 465px;
+}
+
+/* Styling for the hidden paragraph */
+.paragraph,
+.additional-container {
+  display: none;
+  margin-top: 20px;
+  padding: 10px;
+  position: absolute;
+  bottom: -10px;
+  left: -10px;
+  background-color: #f00c0c00;
+}
+
+.show {
+  display: block;
+}
+
+/* Add styling for the arrows */
+.right-arrow,
+.bottom-arrow,
+.top-arrow {
+  cursor: pointer;
+  font-size: 24px;
+  color: #3498db;
+  position: absolute;
+}
+
+.right-arrow {
+  color: black solid;
+  top: 87%;
+  right: 10px;
+  transform: translateY(-50%);
 
 
-      cursor: pointer;
+  cursor: pointer;
   font-size: 40px;
   color: #000101;
   position: absolute;
   transition: transform 0.3s;
-    }
-    .right-arrow:not(.active) {
-      transform: rotate(0deg);
-    }
-    .right-arrow.active {
-      transform: rotate(45deg);
-    }
+}
 
-    .add {
-      display: block;
-      font-weight: bold;
-      height: 40px;
-      transition: all .4s ease-in-out;
-    }
-    .plus {
-      background: #bada55;
-      transition: all .4s ease-in-out;
-    }
-    
-    .bottom-arrow {
-      color: #030301;
-      top: 100%;
-      left: 98%;
-      transform: translateX(-50%);
-    }
+.right-arrow:not(.active) {
+  transform: rotate(0deg);
+}
 
-    .top-arrow{
-      bottom: 570px;
-      top: 0%;
-      left: 95%;
-      color: black;
-      transform: rotate(180deg);
-    }
-    
-    /* Styling for the content container */
-    .content {
-      position: relative;
-    }
-    
-    .paragraph.show {
-      display: block;
-      position: absolute;
-      top: -120px;
-      left: 100%;
-      width: 50%; 
-      background-color: #e6090900;
-      color: black;
-      padding: 10px;
-      z-index: 2; 
-      transform: translateX(0); 
-      transition: transform 1s ease-out;
-    }
-    
-    h4{
-      position: absolute;
-      top: 80%;
-      left: 24%;
-      font-size: 20pt;
-      color: #0a0a0a;
-    }
-    h5{
-      position: absolute;
-      top: 90%;
-      left: 24%;
-      font-size: 20pt;
-      color: #0a0a0a;
-    }
+.right-arrow.active {
+  transform: rotate(45deg);
+}
 
-    
+.add {
+  display: block;
+  font-weight: bold;
+  height: 40px;
+  transition: all .4s ease-in-out;
+}
 
-    .scroll-container {
-      scroll-behavior: smooth;
-      scroll-padding: 10rem;
-      overflow: hidden; /* Hide the scrollbars */
-    }
+.plus {
+  background: #bada55;
+  transition: all .4s ease-in-out;
+}
+
+.bottom-arrow {
+  color: #030301;
+  top: 100%;
+  left: 98%;
+  transform: translateX(-50%);
+}
+
+.top-arrow {
+  bottom: 570px;
+  top: 0%;
+  left: 95%;
+  color: black;
+  transform: rotate(180deg);
+}
+
+/* Styling for the content container */
+.content {
+  position: relative;
+}
+
+.paragraph.show {
+  display: block;
+  position: absolute;
+  top: -120px;
+  left: 100%;
+  width: 50%;
+  background-color: #e6090900;
+  color: black;
+  padding: 10px;
+  z-index: 2;
+  transform: translateX(0);
+  transition: transform 1s ease-out;
+}
+
+h4 {
+  position: absolute;
+  top: 80%;
+  left: 24%;
+  font-size: 20pt;
+  color: #0a0a0a;
+}
+
+h5 {
+  position: absolute;
+  top: 90%;
+  left: 24%;
+  font-size: 20pt;
+  color: #0a0a0a;
+}
+
+
+
+.scroll-container {
+  scroll-behavior: smooth;
+  scroll-padding: 10rem;
+  overflow: hidden;
+  /* Hide the scrollbars */
+}

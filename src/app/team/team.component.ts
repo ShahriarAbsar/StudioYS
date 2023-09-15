@@ -1,15 +1,21 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HostListener } from '@angular/core';
 import { Router } from '@angular/router';
+
+import { GlobalStatesService } from '../services/global-states.service';
 
 @Component({
   selector: 'app-team',
   templateUrl: './team.component.html',
   styleUrls: ['./team.component.css']
 })
-export class TeamComponent {
+export class TeamComponent implements OnInit {
 
-  constructor(private router: Router) {}
+  constructor(private router: Router, private globalStateService: GlobalStatesService) {}
+
+  ngOnInit(): void {
+      this.globalStateService.setBackgroundColor('white')
+  }
 
   isSticky: boolean = false;
   showParagraph: boolean = false;
