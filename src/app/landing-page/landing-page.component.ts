@@ -1,10 +1,11 @@
-import { Component, AfterViewInit, ElementRef, OnInit, Renderer2 } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { backUrl } from 'src/datas';
+import { Component, AfterViewInit, ElementRef, OnInit } from '@angular/core';
 import { slideInAnimation } from '../app-routing.animations';
 import { Router } from '@angular/router';
 
+import { Project } from 'src/intefaces/interfaces';
+
 import { GlobalStatesService } from '../services/global-states.service';
+import { HttpCallsService } from '../services/http-calls.service';
 
 @Component({
   selector: 'app-landing-page',
@@ -14,7 +15,9 @@ import { GlobalStatesService } from '../services/global-states.service';
 })
 export class LandingPageComponent implements AfterViewInit, OnInit {
 
-  videos: Array<{title: string, description: string, category: string, videoLink: string, _id: string, __v: number}> = [];
+  get videos(): Project[] {
+    return this.httpCallsService.projects
+  }
 
   showOverlay = false;
   currentVideo: any = null;
@@ -27,15 +30,12 @@ export class LandingPageComponent implements AfterViewInit, OnInit {
   //   this.globalStateService.changeRandom(num);
   // }
 
-  constructor(private elRef: ElementRef, private http: HttpClient, private renderer: Renderer2, private router: Router, private globalStateService: GlobalStatesService) {}
+  constructor(private elRef: ElementRef, private router: Router, private globalStateService: GlobalStatesService, private httpCallsService: HttpCallsService) {}
 
   ngOnInit(): void {
    /* this.renderer.setStyle(this.elRef.nativeElement.ownerDocument.body, 'backgroundColor', 'black'); */
     this.globalStateService.setBackgroundColor('black')
-    this.http.get(`${backUrl}projects`).subscribe((paisi: any) => {
-      console.log(paisi);
-      this.videos = paisi
-    })
+    this.httpCallsService.getProjects().subscribe(projs => this.httpCallsService.setProjects(projs))
   }
   
 
