@@ -17,6 +17,10 @@ export class TeamComponent implements OnInit {
       this.globalStateService.setBackgroundColor('white')
   }
 
+  get someRandom() {
+    return this.globalStateService.someRandom;
+  }
+
   isSticky: boolean = false;
   showParagraph: boolean = false;
   showAdditionalContainer: boolean = false;

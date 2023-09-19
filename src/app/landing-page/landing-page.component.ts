@@ -11,40 +11,47 @@ import { HttpCallsService } from '../services/http-calls.service';
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.css'],
-  animations: [slideInAnimation]
+  animations: [slideInAnimation],
 })
 export class LandingPageComponent implements AfterViewInit, OnInit {
-
   get videos(): Project[] {
-    return this.httpCallsService.projects
+    return this.httpCallsService.projects;
   }
 
   showOverlay = false;
   currentVideo: any = null;
-  
-  // get random() {
-  //   return this.globalStateService.someRandom;
-  // }
 
-  // changeIt(num: number) {
-  //   this.globalStateService.changeRandom(num);
-  // }
+  get someRandom() {
+    return this.globalStateService.someRandom;
+  }
 
-  constructor(private elRef: ElementRef, private router: Router, private globalStateService: GlobalStatesService, private httpCallsService: HttpCallsService) {}
+  changeIt(num: number) {
+    this.globalStateService.changeRandom(num);
+  }
+
+  constructor(
+    private elRef: ElementRef,
+    private router: Router,
+    private globalStateService: GlobalStatesService,
+    private httpCallsService: HttpCallsService
+  ) {}
 
   ngOnInit(): void {
-   /* this.renderer.setStyle(this.elRef.nativeElement.ownerDocument.body, 'backgroundColor', 'black'); */
-    this.globalStateService.setBackgroundColor('black')
-    this.httpCallsService.getProjects().subscribe(projs => this.httpCallsService.setProjects(projs))
+    /* this.renderer.setStyle(this.elRef.nativeElement.ownerDocument.body, 'backgroundColor', 'black'); */
+    this.globalStateService.setBackgroundColor('black');
+    this.httpCallsService
+      .getProjects()
+      .subscribe((projs) => this.httpCallsService.setProjects(projs));
   }
-  
 
   ngAfterViewInit() {
     this.makeDraggable();
   }
 
   makeDraggable() {
-    const slider = this.elRef.nativeElement.querySelector('.carousel-container');
+    const slider = this.elRef.nativeElement.querySelector(
+      '.carousel-container'
+    );
     let isDown = false;
     let startX: number;
     let scrollLeft: number;
@@ -96,8 +103,7 @@ export class LandingPageComponent implements AfterViewInit, OnInit {
   team() {
     this.router.navigateByUrl('team');
   }
-home(){
-  this.router.navigateByUrl('');
-}
-  
+  home() {
+    this.router.navigateByUrl('');
+  }
 }
